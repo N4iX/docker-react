@@ -6,4 +6,4 @@ before_install:
   - docker build -t xian0120/docker-react -f Dockerfile.dev . # Tell Travis to build the image first
 
 script:
-  - docker run xian0120/docker-react npm run test -- --coverage # -- --coverage is to stop the session after completing the test, because by default it does not quit until you press 'q'
+  - docker run -e CI=true xian0120/docker-react npm run test
